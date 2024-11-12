@@ -1,0 +1,257 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    
+  }
+  @keyframes gradientAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+  }
+  
+  body {
+    background-color: #dde5b6;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(75deg,  #dde5b6,#626651, #171813);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+  }
+
+header {
+    color: black;
+    text-align: center;
+    padding: 30px 0; /* Aumentar el padding para mayor separación */
+    font-size: 28px; /* Aumentar el tamaño de la tipografía */
+
+}
+
+/* Efecto hover con borde de luz blanco alrededor de la tarjeta */
+.developer:hover {
+  box-shadow: 0 0 25px 10px #cbff74; /* Borde de luz blanco */
+  transition: box-shadow 0.3s ease-in-out; /* Suaviza la transición del borde de luz */
+}
+.feedback:hover {
+  box-shadow: 0 0 25px 10px #cbff74; /* Borde de luz blanco */
+  transition: box-shadow 0.3s ease-in-out; /* Suaviza la transición del borde de luz */
+}
+
+
+.icon:hover {
+  transform: scale(1.2); /* Aumenta el tamaño de los iconos de contacto al hacer hover */
+  transition: transform 0.3s ease-in-out; /* Suaviza la transición */
+  filter: brightness(1.2); /* Aumenta el brillo de los iconos al hacer hover */
+}
+
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Aumentar el ancho mínimo */
+    gap: 10px; /* Aumentar el espacio entre los desarrolladores */
+    padding: 30px; /* Aumentar el padding alrededor de la cuadrícula */
+    justify-items: center;
+}
+.developer p {
+  display: inline-flex;
+  justify-content: center; /* Alinea las imágenes al centro */
+  align-items: center; /* Alinea verticalmente */
+  gap: 10px; /* Añade espacio entre las imágenes */
+}
+
+.icon {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 0 !important;
+  margin:10px;
+}
+
+
+.developer {
+    background-color:rgb(243, 255, 241);
+    padding: 30px; /* Aumentar el padding dentro de cada tarjeta */
+    border-radius: 45px; /* Aumentar el radio de borde */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Aumentar la intensidad de la sombra */
+    text-align: center;
+    margin:100Px;
+}
+
+
+.developer img {
+    width: 250px; /* Aumentar el tamaño de la imagen */
+    height: 250px; /* Ajustar la altura para mantener la proporción */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px; /* Aumentar el espacio entre la imagen y el texto */
+}
+
+.developer h2 {
+    margin-bottom: 15px; /* Aumentar el espacio debajo del título */
+    font-size: 28px; /* Aumentar el tamaño del título */
+}
+
+
+.feedback {
+  background-color:rgb(243, 255, 241);
+  padding: 30px; /* Aumentar el padding dentro de cada tarjeta */
+  border-radius:45px; /* Aumentar el radio de borde */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Aumentar la intensidad de la sombra */
+  text-align: center;
+  margin:100px;
+}
+
+.feedback img {
+  width: 280px; /* Match developer image size */
+  height: 250px; /* Match developer image size */
+  object-fit: cover;
+  border-radius: 20%;
+
+  margin-bottom: 20px;
+
+}
+
+.feedback h2 {
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+.feedback p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+a{color:#3a5a40;}
+
+/* ESTO SE APLICA A TODO EL DOCUMENTO */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #dde5b6; /* Beige claro */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* ESTO ES PARA LA BARRA DE NAVEGACION */
+.barrita {
+  background-color: rgba(20, 30, 20, 0.8); /* Verde oscuro más opaco */
+  font-family: Arial, Helvetica, sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(9px); /* Efecto blur aplicado */
+  -webkit-backdrop-filter: blur(10px); /* Compatibilidad para Safari */
+}
+
+.barrita ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 10px;
+  margin: 0;
+}
+
+.barrita #imglogo {
+  height: 55px;
+  width: 210px;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+
+  margin-right: 2vw;
+}
+
+.barrita a {
+  text-decoration: none;
+  color: white; /* Color de texto gris más oscuro */
+  font-size: 18px;
+  padding: 15px;
+  font-weight: 550;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.barrita a:hover {
+  color: #cbff74; /* Verde más oscuro */
+  transform: scale(1.1);
+}
+
+.barrita li {
+  position: relative;
+}
+
+/* ESTO ES PARA EL EFECTO DE SUBRAYADO DE LOS BOTONES */   
+.barrita #vfx::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #cbff74; /* Verde más oscuro */
+  transform: scaleX(0);
+  transform-origin: bottom center;
+  transition: transform 0.3s ease;
+}
+
+
+
+.barrita #vfx:hover::after {
+  transform: scaleX(1);
+}
+
+#PROFILE {
+  background-color: #6d8d73;
+  color: white;
+  border-radius: 50px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+#PROFILE:hover {
+  background-color: #dde5b6;
+  color: #3a5a40;
+}
+
+/* ESTO ES PARA EL MENU DESPLEGABLE DE IDIOMAS */
+.dropdown {
+  position: relative;
+}
+
+.dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(20, 30, 20, 0.9); /* Verde oscuro más opaco */
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  backdrop-filter: blur(20px); 
+  -webkit-backdrop-filter: blur(20px); 
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown .dropdown-content a {
+  color: #d0d0d0; /* Color de texto gris más oscuro */
+  padding: 15px; /* Aumentar padding */
+  text-decoration: none;
+  border-radius: 15px;
+  display: block;
+}
+
+.dropdown .dropdown-content a:hover {
+  background-color: #cbff74; /* Verde más oscuro */
+  color: black;
+}

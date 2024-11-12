@@ -1,0 +1,437 @@
+/* GENERAL RULES */
+* {
+  box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+}
+
+body {
+  background-color: #dde5b6; /* Sets the background color of the page */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Sets the font family */
+}
+
+.barrita {
+  background-color: rgba(20, 30, 20, 0.8); /* Sets a semi-transparent dark background */
+  font-family: Arial, Helvetica, sans-serif; /* Sets the font family for the bar */
+  position: fixed; /* Fixes the bar at the top */
+  top: 0; /* Positions the bar at the top of the page */
+  left: 0; /* Aligns the bar to the left edge */
+  width: 100%; /* Makes the bar span the full width of the page */
+  z-index: 1000; /* Ensures the bar stays on top of other elements */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* Adds a shadow below the bar */
+  backdrop-filter: blur(9px); /* Applies a blur effect to the background */
+  -webkit-backdrop-filter: blur(10px); /* Applies a blur effect for Safari */
+}
+
+.barrita ul {
+  list-style-type: none; /* Removes bullets from list */
+  display: flex; /* Uses flexbox layout */
+  justify-content: start; /* Aligns items to the start of the container */
+  align-items: center; /* Centers items vertically */
+  padding: 10px; /* Adds padding around the list */
+  margin: 0; /* Removes default margin */
+}
+
+.barrita #imglogo {
+  height: 55px; /* Sets logo height */
+  width: 210px; /* Sets logo width */
+  border-top-left-radius: 25px; /* Rounds the top-left corner */
+  border-bottom-right-radius: 25px; /* Rounds the bottom-right corner */
+  border-top-right-radius: 6px; /* Slightly rounds the top-right corner */
+  border-bottom-left-radius: 6px; /* Slightly rounds the bottom-left corner */
+  margin-right: 2vw; /* Adds right margin to create space */
+}
+
+.barrita a {
+  text-decoration: none; /* Removes underline from links */
+  color: white; /* Sets link text color to white */
+  font-size: 18px; /* Sets font size */
+  padding: 15px; /* Adds padding around each link */
+  font-weight: 550; /* Sets font weight */
+  transition: color 0.3s, transform 0.3s; /* Smoothly transitions color and scale on hover */
+}
+
+.barrita a:hover {
+  color: #cbff74; /* Changes color on hover */
+  transform: scale(1.1); /* Slightly enlarges on hover */
+}
+
+.barrita li {
+  position: relative; /* Enables positioning for pseudo-element effects */
+}
+
+.barrita #vfx::after {
+  content: ''; /* Creates an empty element for an underline effect */
+  position: absolute; /* Positions underline within the link */
+  left: 0; /* Aligns the underline to the left */
+  bottom: -2px; /* Positions underline slightly below the text */
+  width: 100%; /* Makes underline span the full width of the text */
+  height: 2px; /* Sets the thickness of the underline */
+  background-color: #cbff74; /* Sets the underline color */
+  transform: scaleX(0); /* Initially hides the underline */
+  transform-origin: bottom center; /* Sets the scale origin for the animation */
+  transition: transform 0.3s ease; /* Smoothly animates the underline on hover */
+}
+
+.barrita #vfx:hover::after {
+  transform: scaleX(1); /* Expands the underline on hover */
+}
+
+#PROFILE {
+  background-color: #6d8d73; /* Sets background color */
+  color: white; /* Sets text color */
+  border-radius: 50px; /* Rounds the element to create a pill shape */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smoothly transitions background and text color on hover */
+}
+
+#PROFILE:hover {
+  background-color: #dde5b6; /* Changes background color on hover */
+  color: #3a5a40; /* Changes text color on hover */
+}
+
+.dropdown {
+  position: relative; /* Enables positioning for dropdown content */
+}
+
+.m-plus-rounded-1c-bold {
+  font-family: "M PLUS Rounded 1c", sans-serif; /* Sets font family */
+  font-weight: 700; /* Sets bold font weight */
+  font-style: normal; /* Normal font style */
+}
+
+.m-plus-rounded-1c-extrabold {
+  font-family: "M PLUS Rounded 1c", sans-serif; /* Sets font family */
+  font-weight: 800; /* Sets extra bold font weight */
+  font-style: normal; /* Normal font style */
+}
+
+.dropdown .dropdown-content {
+  display: none; /* Hides dropdown content by default */
+  position: absolute; /* Positions dropdown content below the button */
+  background-color: rgba(20, 30, 20, 0.9); /* Sets a semi-transparent dark background */
+  border-radius: 20px; /* Rounds corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds shadow */
+  z-index: 100; /* Places dropdown above other elements */
+  backdrop-filter: blur(20px); /* Adds a blur effect to the background */
+  -webkit-backdrop-filter: blur(20px); /* Adds blur for Safari */
+  opacity: 0; /* Hides dropdown with opacity */
+  transition: opacity 0.5s ease-in-out; /* Smooth fade-in transition */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block; /* Shows dropdown content on hover */
+  opacity: 1; /* Fades in dropdown content */
+}
+
+.dropdown .dropdown-content a {
+  color: white; /* Sets link color */
+  padding: 15px; /* Adds padding inside each link */
+  text-decoration: none; /* Removes underline from links */
+  border-radius: 15px; /* Rounds link corners */
+  display: block; /* Displays each link as a block for easier clicking */
+}
+
+.dropdown .dropdown-content a:hover {
+  background-color: #cbff74; /* Changes background color on hover */
+  color: black; /* Changes text color on hover */
+}
+
+main {
+  margin-top: 100px; /* Adds top margin to create space below fixed header */
+  padding: 20px; /* Adds padding around the main content */
+  display: flex; /* Uses flex layout */
+  justify-content: center; /* Centers main content horizontally */
+  flex-wrap: wrap; /* Wraps content to the next line if needed */
+}
+.boton {
+  display: block; /* Displays the button as a block element, taking up the full width of its container */
+  margin: 10px auto; /* Centers the button horizontally and adds a 10px margin on top and bottom */
+  padding: 15px 30px; /* Adds 15px padding vertically and 30px horizontally inside the button */
+  background-color: #3a5a40; /* Sets the button's background color to a green shade */
+  color: #d0d0d0; /* Sets the button's text color to a light grey */
+  text-decoration: none; /* Removes any underline from the button text */
+  border: none; /* Removes any default border around the button */
+  border-radius: 60px; /* Rounds the corners of the button with a large radius for a pill shape */
+  width: 300px; /* Sets the button's width to 300px */
+  font-size: 16px; /* Sets the font size of the button text to 16px */
+  letter-spacing: 2px; /* Increases space between letters by 2px */
+  text-align: center; /* Centers the text inside the button */
+  transition: background-color 0.4s ease; /* Smooth transition for background color when hovered */
+}
+
+.boton:hover {
+  background-color: #2a4a30; /* Changes the background color on hover to a darker green */
+  transform: scale(1); /* Keeps the button at its original size on hover */
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.2); /* Adds a shadow effect below the button on hover */
+}
+
+.receta {
+  background-color: #d0c4a8; /* Sets the background color of the recipe card to light beige */
+  border-radius: 20px; /* Rounds the corners of the recipe card */
+  margin: 40px 25px; /* Adds space between the recipe cards */
+  padding: 20px; /* Adds padding inside the recipe card */
+  display: inline-block; /* Displays the card inline but with block characteristics */
+  align-items: center; /* Centers content vertically inside the recipe card */
+  text-align: center; /* Centers the text within the recipe card */
+  max-width: 400px; /* Sets a maximum width of 400px for the recipe card */
+  min-width: 220px; /* Sets a minimum width of 220px */
+  min-height: fit-content; /* Ensures the height fits its content */
+  overflow: hidden; /* Hides content that overflows the card */
+  position: relative; /* Allows for positioning of child elements inside the card */
+  border: 3px solid #b0a190; /* Adds a border with a color that matches the theme */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box-shadow effects */
+}
+
+.receta::before {
+  content: ''; /* Creates an empty element before the recipe card */
+  position: absolute; /* Positions it relative to the recipe card */
+  top: 0; /* Aligns to the top */
+  left: 0; /* Aligns to the left */
+  width: 100%; /* Fills the width of the card */
+  height: 100%; /* Fills the height of the card */
+  border-radius: 20px; /* Rounds the corners to match the recipe card */
+  background: radial-gradient(circle at var(--light-x) var(--light-y), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 70%); /* Adds a light radial gradient effect */
+  transition: background 0.3s ease; /* Smooth transition for background change */
+  pointer-events: none; /* Prevents this element from capturing pointer events */
+}
+
+.receta:hover {
+  transform: scale(1.05); /* Scales the card slightly larger on hover */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Adds a shadow effect around the card on hover */
+}
+
+p {
+  font-family: "M PLUS Rounded 1c", sans-serif; /* Sets the font for paragraphs */
+  font-weight: 800; /* Makes the text bold */
+  font-style: normal; /* Sets the font style to normal */
+}
+
+.receta p {
+  font-size: 16px; /* Sets font size for paragraph text inside recipe cards */
+  line-height: 1.5; /* Increases line height for readability */
+  padding: 10px; /* Adds padding around the paragraph text */
+}
+
+.receta img {
+  width: 100%; /* Sets the image to take up the full width of the card */
+  height: 200px; /* Sets the image height to 200px */
+  object-fit: cover; /* Ensures the image fills the space without distortion */
+  border-radius: 15px; /* Rounds the image corners slightly */
+}
+
+h2 {
+  font-size: 50px; /* Sets the size of h2 headers */
+  color: #3a5a40; /* Sets the header color to match the button background */
+  font-family: "M PLUS Rounded 1c", sans-serif; /* Sets the font family for headers */
+  font-weight: 800; /* Makes the header text bold */
+  font-style: normal; /* Sets the font style to normal */
+}
+
+h3 {
+  color: #3a5a40; /* Sets the color of h3 headers */
+  font-size: 20px; /* Sets the font size for h3 headers */
+  font-family: "M PLUS Rounded 1c", sans-serif; /* Sets font family for headers */
+  font-weight: 700; /* Makes the header text bold */
+  font-style: normal; /* Sets the font style to normal */
+  padding: 20px; /* Adds padding around the header text */
+}
+
+.categoria {
+  overflow-x: scroll; /* Allows horizontal scrolling */
+  white-space: nowrap; /* Keeps elements in a single line */
+  padding-bottom: 20px; /* Adds space below the category section */
+  scrollbar-width: thin; /* Makes the scrollbar thin */
+  scrollbar-color: #3a5a40 #d0c4a8; /* Sets scrollbar color */
+  margin-left: 8vw; /* Adds left margin for alignment */
+  margin-right: 8vw; /* Adds right margin for alignment */
+  margin-top: 26px; /* Increases top margin between categories */
+  margin-bottom: 40px; /* Increases bottom margin between categories */
+}
+
+.categoria::-webkit-scrollbar {
+  height: 12px; /* Sets the scrollbar height */
+}
+
+.categoria::-webkit-scrollbar-track {
+  background: #d0c4a8; /* Sets the track color */
+  border-radius: 50%; /* Rounds the scrollbar track */
+}
+
+.categoria::-webkit-scrollbar-thumb {
+  background-color: #3a5a40; /* Sets scrollbar thumb color */
+  border-radius: 50%; /* Rounds the scrollbar thumb */
+  border: 2px solid #d0c4a8; /* Adds a border around the scrollbar thumb */
+}
+
+.categoria::-webkit-scrollbar-thumb:hover {
+  background-color: #2a4a30; /* Changes thumb color on hover */
+  border-radius: 50%; /* Keeps thumb rounded */
+}
+
+/* Responsive Design Media Queries */
+@media screen and (max-width: 768px) {
+  .barrita ul {
+    flex-direction: column; /* Stacks elements vertically */
+    align-items: flex-start; /* Aligns items to the start */
+  }
+
+  .barrita #imglogo {
+    width: 150px; /* Adjusts logo width */
+    height: auto; /* Maintains aspect ratio */
+  }
+
+  .barrita a {
+    font-size: 16px; /* Adjusts link font size */
+    padding: 10px; /* Adds padding around links */
+  }
+
+  .boton {
+    width: 80%; /* Reduces button width */
+    font-size: 14px; /* Reduces font size */
+  }
+
+  .receta {
+    max-width: 90%; /* Reduces max width of recipe cards */
+    min-width: 90%; /* Sets minimum width */
+    margin: 10px 0; /* Reduces margin between cards */
+  }
+
+  .receta img {
+    height: 150px; /* Adjusts image height */
+  }
+
+  h2 {
+    font-size: 40px; /* Reduces header font size */
+    font-weight: 900; /* Makes header bolder */
+  }
+
+  h3 {
+    font-size: 18px; /* Adjusts h3 font size */
+    padding: 10px; /* Reduces padding */
+  }
+
+  .categoria {
+    margin-left: 5vw; /* Adjusts left margin */
+    margin-right: 5vw; /* Adjusts right margin */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .barrita ul {
+    flex-direction: column; /* Stacks elements vertically */
+    align-items: center; /* Centers items */
+  }
+
+  .barrita a {
+    font-size: 14px; /* Reduces font size for links */
+    padding: 8px; /* Adjusts padding around links */
+  }
+
+  .boton {
+    width: 90%; /* Reduces button width */
+    font-size: 12px; /* Reduces font size */
+  }
+
+  .receta {
+    max-width: 100%; /* Allows full width */
+    min-width: 100%; /* Sets minimum width */
+  }
+
+  h2 {
+    font-size: 30px; /* Reduces font size for headers */
+  }
+
+  h3 {
+    font-size: 16px; /* Reduces font size for smaller headers */
+  }
+
+
+
+    .categoria {
+      margin-left: 5vw;
+      margin-right: 5vw;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .barrita ul {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .barrita a {
+      font-size: 14px;
+      padding: 8px;
+    }
+
+    .boton {
+      width: 90%;
+      font-size: 12px;
+    }
+
+    .receta {
+      max-width: 100%;
+      min-width: 100%;
+    }
+
+    .receta img {
+      height: 120px;
+    }
+
+    h2 {
+      font-size: 30px;
+    }
+
+    h3 {
+      font-size: 16px;
+      padding: 5px;
+    }
+
+
+    .categoria {
+      margin-left: 3vw;
+      margin-right: 3vw;
+    }
+  }
+ 
+  
+  footer {
+    background-color: #2a4a30;
+    color: white;
+    padding: 20px;
+    margin-top: 30px;
+    text-align: center;
+    border-top: 4px solid #6d8d73;
+  }
+.scroll-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #3a5a40;
+  color: #d0c4a8;
+  border: none;
+  border-radius: 50%;
+  width: 60px; /* Slightly reduced button size */
+  height: 60px; /* Slightly reduced button size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.scroll-button:hover {
+  background-color: #6d8d73;
+  color: #eaf2c1;
+}
+
+.scroll-button svg {
+  width: 32px; /* Slightly reduced SVG size */
+  height: 32px; /* Slightly reduced SVG size */
+}
+
+html {
+  scroll-behavior: smooth;
+}

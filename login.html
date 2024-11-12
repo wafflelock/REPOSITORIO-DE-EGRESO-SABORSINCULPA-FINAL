@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaborSinCulpa | Iniciar sesión</title>
+    <link rel="stylesheet" href="register.css">
+    <link rel="icon" href="logo/icono.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="h  ttps://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<header>
+  <nav class="barrita">
+    <ul>
+      <li><a href="mainpageesp.html"><img src="logo/logo.jpg" id="imglogo"></a></li>
+      <li><a href="explorar.html" id="vfx">EXPLORAR</a></li>
+      <li><a href="contact.html" target="_blank" id="vfx">CONTÁCTANOS</a></li>
+      <li class="dropdown">
+        <a href="#">IDIOMA</a>
+        <ul class="dropdown-content">
+          <li><a href="login.html">Español</a></li>
+          <li><a href="login.html">Inglés</a></li>
+        </ul>
+      </li>
+      <li><a href="login.html" id="vfx">INICIAR SESIÓN</a></li>
+      <li><a href="register.html" id="PROFILE">REGISTRARSE</a></li>
+    </ul>
+  </nav>
+</header>
+<body>
+  <form  id="loginForm" action="login.php" method=post>
+  <div class="login-container">
+    <h1>Acceder a tu cuenta</h1>
+    <div class="logo-container">
+    <img src="logo/logofullscreen.jpg"  class="logo-circular"> <!-- Nueva imagen -->
+</div>
+
+      <input type="text" name="username" placeholder="Username" required>
+
+      <div class="password-container">
+        <input type="password" name="password" placeholder="Password" required>
+        <i id="togglePassword" class="fas fa-eye eye-icon"></i>
+      </div>
+
+      <button type="submit">Iniciar sesión</button>
+      <p>¿No tienes una cuenta? <a href="register.html">Crea una</a></p>
+
+    </form>
+
+  </div>
+
+  <script src="formValidation.js"></script> <!-- Validaciones de formulario -->
+  <script>
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('input[name="password"]');
+
+    togglePassword.addEventListener('click', function () {
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      this.classList.toggle('fa-eye-slash');
+    });
+  </script>
+</body>
+</html>
